@@ -7,10 +7,9 @@ struct HeaderView: View {
     var body: some View {
         ZStack {
             HStack {
-                // Left image (img1)
+                // Left image
                 Button(action: {
-                    // Add action for the left image (img1)
-                    // Navigate or perform any action you want here
+                    
                 }) {
                     Image("MatchPfp")
                         .resizable()
@@ -21,7 +20,7 @@ struct HeaderView: View {
                 
                 Spacer()
                 
-                // Center image (img2)
+                // Center image
                 Button(action: {
                     
                 }) {
@@ -33,9 +32,9 @@ struct HeaderView: View {
                 
                 Spacer()
                 
-                // Right image (img3)
+                // Right image
                 Button(action: {
-                    // Navigate to MessageView
+                    // to Navigate to MessageView
                     isMessageViewPresented = true
                 }) {
                     Image("Chat")

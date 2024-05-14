@@ -7,7 +7,7 @@ struct ContentView: View {
         if isLoading {
             LoadingView(isLoading: $isLoading)
                 .onAppear {
-                    // Use a timer to transition to the home screen after 1 second
+                   
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                         self.isLoading = false
                     }

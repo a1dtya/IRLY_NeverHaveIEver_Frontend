@@ -6,7 +6,7 @@ struct ChatRoomView: View {
     @Binding var correctAnswers: [String]
     @Binding var matchPercentage: Int
     @State private var showingHomePage = false
-    @State private var displayOptions = false // Track if Options view should be displayed
+    @State private var displayOptions = false
     private let questions = [
         "I went skinny dipping",
         "Tried eating ice cream with a fork",
@@ -19,9 +19,9 @@ struct ChatRoomView: View {
                 // Header
                 HStack {
                     NavigationLink(destination: HomePageView()
-                        .navigationBarBackButtonHidden(self.showingHomePage) // Hide back button when showingHomePage is true
+                        .navigationBarBackButtonHidden(self.showingHomePage)
                         .onAppear {
-                            // Set showingHomePage to true when navigating to HomePageView
+                            
                             self.showingHomePage = true
                         }
                     ) {
@@ -50,7 +50,7 @@ struct ChatRoomView: View {
                         EmptyView()
                     }
                     Button(action: {
-                        self.displayOptions = true // Show Options view when the button is tapped
+                        self.displayOptions = true 
                     }) {
                         Image("Options")
                             .resizable()

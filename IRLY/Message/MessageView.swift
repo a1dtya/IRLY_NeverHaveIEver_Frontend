@@ -16,9 +16,9 @@ struct MessageView: View {
                         Image("Back")
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .padding(.trailing) // Add padding to the left
+                            .padding(.trailing) //  padding to the left
                     }
-                    
+
                     Image("MatchPfp")
                         .resizable()
                         .frame(width: 60, height: 60)
@@ -37,19 +37,19 @@ struct MessageView: View {
                         EmptyView()
                     }
                     Button(action: {
-                        self.isOptionsVisible = true // Show Options view when the button is tapped
+                        self.isOptionsVisible = true // Show Options
                     }) {
                         Image("Options")
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .padding(.trailing) // Add padding to the right
+                            .padding(.trailing)
                     }
                 }
-                .padding(.horizontal) // Add horizontal padding for spacing between the edges
+                .padding(.horizontal) //  horizontal padding for spacing between the edges
                 
                 Divider()
                     .background(Color.black)
-                    .background(Color.white) // Move background color to above the divider
+                    .background(Color.white)
                 
                 Spacer()
                 
@@ -63,17 +63,17 @@ struct MessageView: View {
                     .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.701))
                     .frame(maxWidth: .infinity)
                     .edgesIgnoringSafeArea(.horizontal)
-                    .offset(y: -10) // Offset the line upwards to visually center it
+                    .offset(y: -10)
             }
-            .background(Color.white) // Set background color for the entire view
-            .navigationBarHidden(true) // Hide the navigation bar
+            .background(Color.white)
+            .navigationBarHidden(true)
         }
         .background(
             // NavigationLink to HomePageView
             NavigationLink(destination: HomePageView(), isActive: $isHomePageVisible) {
                 EmptyView()
             }
-            .hidden() // Hide the navigation link label
+            .hidden() 
         )
     }
 }

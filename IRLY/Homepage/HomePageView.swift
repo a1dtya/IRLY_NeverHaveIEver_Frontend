@@ -3,14 +3,14 @@ import SwiftUI
 struct HomePageView: View {
     var body: some View {
         ZStack {
-            // Background color for the entire view
+            // Background color
             Color.white
             
             
             ScrollView(showsIndicators: false) {
 
             VStack {
-                // Main Content Screen
+                // Main  Screen
                 VStack {
                     Image("HomePage01")
                         .resizable()
@@ -31,22 +31,22 @@ struct HomePageView: View {
                         .padding(.top, -190)
                         .shadow(radius: 5)
                 }
-                // Added padding to move content below the header
+                
             }
-            .edgesIgnoringSafeArea(.all) // Ignored the safe area insets
+            .edgesIgnoringSafeArea(.all)
         }
-            //  to add FooterView at the bottom left corner
+            //   FooterView at the bottom left corner
             VStack {
                 Spacer()
                 HStack {
-                    Spacer() // Add Spacer to push the FooterView to the right
+                    Spacer() // this   Spacer to push the FooterView to the right
                     FooterView()
                         .padding(.trailing, 320)
-                        .shadow(radius: 5)// Add padding to move the FooterView slightly to the right
+                        .shadow(radius: 5)//
                 }
             }
             
-            // HeaderView
+            
             HeaderView()
                 .background(
                     LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.9), Color.white.opacity(0.1)]), startPoint: .top, endPoint: .bottom)

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Options: View {
-    @Binding var displayBackButton: Bool //  binding for back button display
+    @Binding var displayBackButton: Bool
     
     var body: some View {
         VStack(spacing: 0) {
@@ -10,7 +10,7 @@ struct Options: View {
             Divider()
             OptionButton(title: "Info")
             Divider()
-            OptionButton(title: "Report", isHighlighted: true) // Make Report option red
+            OptionButton(title: "Report", isHighlighted: true) // to Make Report option red
             Divider()
         }
         .padding()
@@ -42,7 +42,7 @@ struct OptionButton: View {
 #if DEBUG
 struct Options_Previews: PreviewProvider {
     static var previews: some View {
-        Options(displayBackButton: .constant(true)) // Set initial value for displayBackButton
+        Options(displayBackButton: .constant(true)) // to Set initial value for displayBackButton
     }
 }
 #endif

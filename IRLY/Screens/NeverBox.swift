@@ -21,7 +21,7 @@ struct NeverBox: View {
         ["😜", "🫣"], // Options for Question 2
         ["😜", "🫣"] // Options for Question 3
     ]
-    private let correctAnswersList = ["🫣", "😜", "🫣"] // Correct answers set by the other person
+    private let correctAnswersList = ["🫣", "😜", "🫣"] // Correct answers set
     
     var body: some View {
         GeometryReader { geometry in
@@ -107,26 +107,26 @@ struct NeverBox: View {
     }
     
     private func selectOption(option: String) {
-        buttonPressCount += 1 // Increment button press count
+        buttonPressCount += 1 // to Increment button press count
         
         if currentQuestionIndex >= questions.count {
             matchStatus = "You've answered all questions. No more matches."
             return
         }
         
-        userSelections[currentQuestionIndex] = option // Update userSelections
+        userSelections[currentQuestionIndex] = option // to Update userSelections
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if currentQuestionIndex < questions.count - 1 {
                 currentQuestionIndex += 1
             } else {
-                matchPercentage = calculatePercentage() // Update match percentage
+                matchPercentage = calculatePercentage() // to Update match percentage
                 matchStatus = matchPercentage >= 50 ? "You have a match!" : "No match this time."
             }
         }
         
         if option == correctAnswersList[currentQuestionIndex] {
-            correctAnswers[currentQuestionIndex] = option // Update correctAnswers
+            correctAnswers[currentQuestionIndex] = option // to Update correctAnswers
             if option == "😜" {
                 leftButtonImage = "BothYes"
             } else {
@@ -172,7 +172,7 @@ struct NeverBox: View {
         let correctCount = correctAnswers.enumerated().filter { index, answer in
             answer == correctAnswersList[index]
         }.count
-        return correctCount * 33 // Update match percentage based on correct count
+        return correctCount * 33 // to Update match percentage based on correct count
     }
 }
 

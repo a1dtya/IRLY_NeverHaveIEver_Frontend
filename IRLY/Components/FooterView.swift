@@ -5,15 +5,15 @@ struct FooterView: View {
     
     var body: some View {
         Button(action: {
-            // Perform the desired action when the button is tapped
+            // Perform the  action when tapped
             isButtonTapped.toggle()
         }) {
             Image("LeftSwipe")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: 100) // Adjust height as needed
+                .frame(height: 100)
         }
-        .foregroundColor(.blue) // Change button color if needed
+        .foregroundColor(.blue)
     }
 }
 

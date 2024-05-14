@@ -5,8 +5,8 @@ struct ListView: View {
     @Binding var correctAnswers: [String]
     @Binding var matchPercentage: Int
     
-    @State private var isChatRoomVisible = false // Added state variable
-    @State private var isHomePageVisible = false // Added state variable
+    @State private var isChatRoomVisible = false
+    @State private var isHomePageVisible = false
     
     private let questions = [
         "I went skinny dipping",
@@ -22,13 +22,17 @@ struct ListView: View {
     
     var body: some View {
         ZStack {
+            
+            
+            
+            
             NavigationView {
                 VStack {
                     VStack {
                         HStack {
                             Spacer()
                             Button(action: {
-                                // Navigate to HomePageView upon cross button press
+                                // to Navigate to HomePageView
                                 isHomePageVisible = true
                             }) {
                                 Image("cross")
@@ -70,7 +74,7 @@ struct ListView: View {
                                 .font(.title3)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
-                            Text("✨\(matchPercentage)✨") // Update match percentage score
+                            Text("✨\(matchPercentage)✨") //Match percentage score
                                 .font(.system(size: 30, weight: .bold))
                                 .foregroundColor(Color(red: 119/255, green: 66/255, blue: 219/255))
                         }
@@ -96,7 +100,7 @@ struct ListView: View {
                                         
                                          
                                          Button(action: {
-                                             // Navigate to HomePageView upon cross button press
+                                             // to avigate to HomePageView
                                            
                                          }) {
                                              Image("Dice")
@@ -111,7 +115,7 @@ struct ListView: View {
                                             .padding(.horizontal, -20)
                                             .padding(.vertical,0)
                                         Button(action: {
-                                            // Navigate to ChatRoomView upon button press
+                                            // to Navigate to ChatRoomView
                                             withAnimation {
                                                 isChatRoomVisible = true
                                             }
@@ -150,7 +154,7 @@ struct ListView: View {
             
             if isChatRoomVisible {
                 ChatRoomView(userSelections: $userSelections, correctAnswers: $correctAnswers, matchPercentage: $matchPercentage)
-                    .transition(.move(edge: .trailing)) // Use .move transition effect
+                    .transition(.move(edge: .trailing)) 
             }
         }
     }
